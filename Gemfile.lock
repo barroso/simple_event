@@ -1,0 +1,25 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    benchmark (0.4.0)
+    dotenv (2.8.1)
+    ffi (1.17.1-aarch64-linux-gnu)
+    json (2.9.1)
+    mini_portile2 (2.8.8)
+    rake (13.2.1)
+    rdkafka (0.12.1)
+      ffi (~> 1.15)
+      mini_portile2 (~> 2.6)
+      rake (> 12)
+
+PLATFORMS
+  aarch64-linux
+
+DEPENDENCIES
+  benchmark (~> 0.4.0)
+  dotenv (~> 2.8)
+  json (~> 2.6)
+  rdkafka (~> 0.12.0)
+
+BUNDLED WITH
+   2.3.27

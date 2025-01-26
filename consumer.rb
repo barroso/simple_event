@@ -5,6 +5,7 @@ require "dotenv/load"
 
 class EventConsumer
   def initialize(group_id)
+    puts "initialize eventConsumer"
     @config = {
       'bootstrap.servers': ENV["KAFKA_BOOTSTRAP_SERVERS"] || "localhost:9092",
       'group.id': group_id,
