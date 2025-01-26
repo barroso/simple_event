@@ -19,4 +19,4 @@ RUN bundle install
 COPY . .
 
 # Comando padrão
-CMD ["ruby", "performance_producer.rb"]
+CMD ["ruby", "producer.rb"]

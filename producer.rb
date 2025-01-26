@@ -30,12 +30,3 @@ class EventProducer
     @producer.close
   end
 end
-
-# Exemplo de uso
-producer = EventProducer.new
-producer.publish("user_events", {
-  event_type: "user_created",
-  user_id: SecureRandom.uuid,
-  timestamp: Time.now,
-})
-producer.close

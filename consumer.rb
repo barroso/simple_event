@@ -19,7 +19,7 @@ class EventConsumer
 
     begin
       @consumer.each do |message|
-        handle_message(message)
+        handle_message(message, @config)
       end
     rescue Rdkafka::RdkafkaError => e
       puts "Erro no consumo: #{e.message}"
@@ -30,9 +30,10 @@ class EventConsumer
 
   private
 
-  def handle_message(message)
+  def handle_message(message, group_id)
     puts "Tópico: #{message.topic}"
     puts "Partição: #{message.partition}"
+    puts "GroupId: #{group_id}"
     puts "Payload: #{message.payload}"
 
     begin
@@ -54,7 +55,3 @@ class EventConsumer
     # Lógica de processamento do evento de criação de usuário
   end
 end
-
-# Exemplo de uso
-consumer = EventConsumer.new("ruby-consumer-group")
-consumer.subscribe("user_events")  # Passando string única
